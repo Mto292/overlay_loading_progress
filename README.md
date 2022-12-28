@@ -1,4 +1,4 @@
-# loading_progress
+# overlay_loading_progress
 
 A flutter widget of overlay loading progress Indicator. You can easily customize as you want.
 
