@@ -62,17 +62,18 @@ class _MyHomePageState extends State<MyHomePage> {
   onTapStartBtn() async {
     OverlayLoadingProgress.start(context, barrierDismissible: false);
     await Future.delayed(const Duration(seconds: 5));
-    OverlayLoadingProgress.stop(context);
+    OverlayLoadingProgress.stop();
   }
 
   onTapStartGifLoadingProgressBtn() async {
     OverlayLoadingProgress.start(
       context,
       gifOrImagePath: 'assets/loading.gif',
+      loadingWidth: 50,
       barrierDismissible: true
     );
     await Future.delayed(const Duration(seconds: 3));
-    OverlayLoadingProgress.stop(context);
+    OverlayLoadingProgress.stop();
   }
 
   onTapStartCustomLoadingProgressBtn() async {
@@ -88,6 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ));
     await Future.delayed(const Duration(seconds: 8));
-    OverlayLoadingProgress.stop(context);
+    OverlayLoadingProgress.stop();
   }
 }

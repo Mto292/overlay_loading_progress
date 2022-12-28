@@ -14,7 +14,7 @@ add this line to pubspec.yaml
 ```yaml
 
    dependencies:
-     overlay_loading_progress: ^1.0.0
+     overlay_loading_progress: ^1.0.1
 
 ```
 
@@ -33,14 +33,14 @@ Start it with
 
 Stop it with
 ```dart
-   OverlayLoadingProgress.stop(context);
+   OverlayLoadingProgress.stop();
 ```
 
 ## Complete Example
 ```dart
    OverlayLoadingProgress.start(context);
    await Future.delayed(const Duration(seconds: 3));
-   OverlayLoadingProgress.stop(context);
+   OverlayLoadingProgress.stop();
 ```
 
 ![gif_1](https://user-images.githubusercontent.com/49743631/167276311-b96b6f22-adda-489b-a2a6-f1c467dccb60.gif)
@@ -52,7 +52,7 @@ Stop it with
      gifOrImagePath: 'assets/loading.gif',
    );
    await Future.delayed(const Duration(seconds: 3));
-   OverlayLoadingProgress.stop(context);
+   OverlayLoadingProgress.stop();
 ```
 
 ![gif_2](https://user-images.githubusercontent.com/49743631/167276327-6b83530c-f361-4850-9162-c46e0d006164.gif)
@@ -71,6 +71,6 @@ Stop it with
          ),
    );
    await Future.delayed(const Duration(seconds: 3));
-   OverlayLoadingProgress.stop(context);
+   OverlayLoadingProgress.stop();
 ```
 

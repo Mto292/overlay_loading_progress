@@ -10,6 +10,7 @@ class OverlayLoadingProgress {
     Color color = Colors.black38,
     String? gifOrImagePath,
     bool barrierDismissible = true,
+    double? loadingWidth,
   }) async {
     if (_overlay != null) return;
     _overlay = OverlayEntry(builder: (BuildContext context) {
@@ -19,12 +20,13 @@ class OverlayLoadingProgress {
         widget: widget,
         gifOrImagePath: gifOrImagePath,
         barrierDismissible: barrierDismissible,
+        loadingWidth: loadingWidth,
       );
     });
     Overlay.of(context)!.insert(_overlay!);
   }
 
-  static stop(BuildContext context, [bool rootNavigator = true]) {
+  static stop() {
     if (_overlay == null) return;
     _overlay!.remove();
     _overlay = null;
@@ -37,6 +39,7 @@ class _LoadingWidget extends StatelessWidget {
   final Color? barrierColor;
   final String? gifOrImagePath;
   final bool barrierDismissible;
+  final double? loadingWidth;
 
   const _LoadingWidget({
     Key? key,
@@ -45,16 +48,13 @@ class _LoadingWidget extends StatelessWidget {
     this.barrierColor,
     this.gifOrImagePath,
     required this.barrierDismissible,
+    this.loadingWidth,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: barrierDismissible
-          ? () {
-              OverlayLoadingProgress.stop(context);
-            }
-          : null,
+      onTap: barrierDismissible ? OverlayLoadingProgress.stop : null,
       child: Container(
         constraints: const BoxConstraints.expand(),
         color: barrierColor,
@@ -62,16 +62,11 @@ class _LoadingWidget extends StatelessWidget {
           onTap: () {},
           child: Center(
             child: widget ??
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 9,
-                  child: AspectRatio(
-                    aspectRatio: 1,
-                    child: gifOrImagePath != null
-                        ? Image.asset(gifOrImagePath!)
-                        : const CircularProgressIndicator(
-                            strokeWidth: 3,
-                          ),
-                  ),
+                SizedBox.square(
+                  dimension: loadingWidth,
+                  child: gifOrImagePath != null
+                      ? Image.asset(gifOrImagePath!)
+                      : const CircularProgressIndicator(strokeWidth: 3),
                 ),
           ),
         ),

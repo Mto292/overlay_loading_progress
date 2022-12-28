@@ -1,7 +1,7 @@
 name: overlay_loading_progress
 description: A new Flutter project.
-version: 0.0.1
-homepage:
+version: 1.0.1
+homepage: https://github.com/Mto292/overlay_loading_progress.git
 
 environment:
   sdk: ">=2.17.1 <3.0.0"
