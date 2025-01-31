@@ -1,6 +1,6 @@
 name: overlay_loading_progress
 description: A flutter widget of overlay loading progress Indicator. You can easily customize as you want.
-version: 1.0.1
+version: 1.0.2
 homepage: https://github.com/Mto292/overlay_loading_progress.git
 
 environment:

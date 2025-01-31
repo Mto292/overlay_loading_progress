@@ -2,6 +2,8 @@
 
 A flutter widget of overlay loading progress Indicator. You can easily customize as you want.
 
+**If you are looking for a more versatile solution, check out my new package [overlay_kit](https://pub.dev/packages/overlay_kit), which includes advanced features and improvements.**
+
 Website example >> https://loadingprogress.mustafaturkmen.dev
 
 
@@ -14,7 +16,7 @@ add this line to pubspec.yaml
 ```yaml
 
    dependencies:
-     overlay_loading_progress: ^1.0.1
+     overlay_loading_progress: ^1.0.2
 
 ```
 
